@@ -31,7 +31,7 @@ class Controller extends BaseController
     {
         $this->init();
         $data = count($data) ? $data[0] : $data;
-
+        $data['lang']  = $this->lang;
         $data['title'] = 'title';
         $data['CSS']   = 'css'.DS.$this->controller.DS.$this->method.'.css';
         $data['js']    = 'js'.DS.$this->controller.DS.$this->method.'.js';
@@ -56,7 +56,7 @@ class Controller extends BaseController
             $this->controller = str_ireplace('Controller','',$this->controller);
             $this->controller = strtolower($this->controller);
 
-            $this->lang = new Language($this->controller,$this->method);
+            $this->lang = new Language($this->controller, $this->method);
 
             $this->IsInit = true;
         }
