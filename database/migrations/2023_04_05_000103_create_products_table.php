@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->decimal('weight',8,2,true);
             $table->decimal('vat',8,2,true);
             $table->decimal('price',8,2,true);
+            //TODO::Discount id
             $table->string('image');
             $table->timestamps();
 
