@@ -20,10 +20,9 @@ class CreateProductsTable extends Migration
             $table->string('barcode',20);
             $table->string('name');
             $table->unsignedBigInteger('quantity_in_Stock');
-            $table->decimal('weight',8,2,true);
-            $table->decimal('vat',8,2,true);
-            $table->decimal('price',8,2,true);
-            //TODO::Discount id
+            $table->unsignedDecimal('weight');
+            $table->unsignedDecimal('vat');
+            $table->unsignedDecimal('price');
             $table->string('image');
             $table->timestamps();
 
