@@ -7,3 +7,12 @@ const CURRENCY                                          = "USD";
 const CURRENCY_SYMBOL                                   = "$";
 
 const PRODUCTS_IMG_FOLDER                               = 'images' . DS . 'products' . DS ;
+
+
+
+
+
+/******************* Start Discount type *************/
+const CASH                                               = 1;
+const PERCENT                                            = 2;
+/******************* End Discount type *************/
