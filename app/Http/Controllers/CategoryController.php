@@ -6,9 +6,7 @@ use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Exception;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Http\RedirectResponse;
 
 class CategoryController extends Controller
@@ -16,11 +14,11 @@ class CategoryController extends Controller
     /**
      * Display a listing of Category.
      *
-     * @param Request $request
      * @return View
      */
-    public function index(Request $request):View
+    public function index():View
     {
+        $this->init();
         $categories = Category::paginate(APP_PAGINATE);
         return $this->view(compact('categories'));
     }
@@ -32,6 +30,7 @@ class CategoryController extends Controller
      */
     public function create(): View
     {
+        $this->init();
        return $this->view();
     }
 

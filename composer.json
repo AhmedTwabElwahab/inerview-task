@@ -34,6 +34,8 @@
         },
         "files" : [
             "app/helper/constants.php",
+            "app/helper/error.php",
+            "app/helper/functions.php",
             "app/helper/Language.php"
         ]
     },

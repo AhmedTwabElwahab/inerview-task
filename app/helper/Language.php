@@ -24,9 +24,9 @@ class Language
      *
      * @param string $text
      * @param array $options
-     * @return array
+     * @return array|string
      */
-    public function text(string $text,array $options = []): array
+    public function text(string $text,array $options = []): array|string
     {
         return __($this->controller.'\\'.$this->method.'.'.$text,$options);
     }

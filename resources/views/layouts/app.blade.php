@@ -16,6 +16,10 @@
         <!-- Scripts -->
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+        <!-- fontAwesome -->
+        <link rel="stylesheet" href="{{asset('css/lib/fontAwesome/all.min.css')}}">
+
+
         <!-- Start style include  -->
         @isset($CSS)
             @if(file_exists(public_path().DS.$CSS))
@@ -31,7 +35,12 @@
             @yield('content')
         </main>
     </div>
+
+
+
+
     <!-- start script include  -->
+    <script src="{{asset('js/lib/fontAwesome/all.min.js')}}"></script>
     @isset($js)
         @if(file_exists(public_path().DS.$js))
             <script  src="{{asset($js)}}"></script>
