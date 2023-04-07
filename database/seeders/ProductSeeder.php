@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
                 'weight'                => 0.8,
                 'vat'                   => 14,
                 'price'                 => 3,
-                'image'                 => PRODUCTS_IMG_FOLDER.'product.jpg',
+                'image'                 => PRODUCTS_IMG_FOLDER.'1.jpg',
             ],
             [
                 'name'                  => 'red T-shirt',
@@ -33,7 +33,7 @@ class ProductSeeder extends Seeder
                 'weight'                => 0.2,
                 'vat'                   => 14,
                 'price'                 => 8,
-                'image'                 => PRODUCTS_IMG_FOLDER.'product.jpg',
+                'image'                 => PRODUCTS_IMG_FOLDER.'2.jpg',
             ],
             [
                 'name'                  => 'Blouse',
@@ -43,7 +43,7 @@ class ProductSeeder extends Seeder
                 'weight'                => 0.3,
                 'vat'                   => 14,
                 'price'                 => 71,
-                'image'                 => PRODUCTS_IMG_FOLDER.'product.jpg',
+                'image'                 => PRODUCTS_IMG_FOLDER.'1.jpg',
             ],
             [
                 'name'                  => 'Jacket',
@@ -53,7 +53,7 @@ class ProductSeeder extends Seeder
                 'weight'                => 0.96,
                 'vat'                   => 14,
                 'price'                 => 105.99,
-                'image'                 => PRODUCTS_IMG_FOLDER.'product.jpg',
+                'image'                 => PRODUCTS_IMG_FOLDER.'2.jpg',
             ],
             [
                 'name'                  => 'Jacket bee',
@@ -63,7 +63,7 @@ class ProductSeeder extends Seeder
                 'weight'                => 0.86,
                 'vat'                   => 14,
                 'price'                 => 98,
-                'image'                 => PRODUCTS_IMG_FOLDER.'product.jpg',
+                'image'                 => PRODUCTS_IMG_FOLDER.'2.jpg',
             ],
 
         ]);

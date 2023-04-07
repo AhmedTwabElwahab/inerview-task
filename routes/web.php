@@ -19,7 +19,9 @@ Route::resource('/category', CategoryController::class)->except('show');
 Route::resource('/product', ProductController::class)->except('show');
 
 /** Cart route resource */
-Route::resource('/cart', CartController::class)->except('show');
+Route::controller(CartController::class)->group(function () {
+    Route::get('/cart', 'show');
+});
 
 /** offer route resource */
 Route::resource('/offer', CartController::class)->except('show');

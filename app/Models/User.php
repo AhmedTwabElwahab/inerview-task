@@ -4,10 +4,26 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class Product
+ * @package App\Models
+ *
+ * @property integer $id
+ * @property string  $name
+ * @property string  $email
+ * @property string  $password
+ *
+ * RELATIONS PROPERTIES
+ *
+ * @property Country    $country
+ *
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -42,4 +58,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get active user
+     *
+     * @return User|null
+     */
+    public static function activeUser(): ?User
+    {
+        return Auth::user();
+    }
+
 }

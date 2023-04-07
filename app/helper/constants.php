@@ -1,5 +1,6 @@
 <?php
 
+/******************* Start APP Settings *************/
 const DS                                                = DIRECTORY_SEPARATOR;
 const APP_ERROR                                         = -1;
 const APP_PAGINATE                                      = 50;
@@ -7,12 +8,10 @@ const CURRENCY                                          = "USD";
 const CURRENCY_SYMBOL                                   = "$";
 
 const PRODUCTS_IMG_FOLDER                               = 'images' . DS . 'products' . DS ;
-
-
-
+/******************* END APP Settings ***************/
 
 
 /******************* Start Discount type *************/
 const CASH                                               = 1;
 const PERCENT                                            = 2;
-/******************* End Discount type *************/
+/******************* END Discount type *************/
