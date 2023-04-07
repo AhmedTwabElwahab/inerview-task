@@ -40,6 +40,7 @@
 
 
     <!-- start script include  -->
+    <script src="{{asset('js/lib/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('js/lib/fontAwesome/all.min.js')}}"></script>
     @isset($js)
         @if(file_exists(public_path().DS.$js))
