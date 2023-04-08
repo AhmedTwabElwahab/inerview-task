@@ -33,9 +33,13 @@
                         </td>
                         <td>{{CURRENCY_SYMBOL.$item->product->price}}</td>
                         <td>
-                            <button id="remove_row" type="button" class="btn">
-                                <i class="fa fa-trash" style="color:red"></i>
-                            </button>
+                            <form method="POST" action="{{route('CartItem.destroy',$item)}}">
+                                @csrf
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button id="remove_row" type="submit" class="btn">
+                                    <i class="fa fa-trash" style="color:red"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

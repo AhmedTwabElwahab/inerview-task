@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
@@ -25,3 +26,6 @@ Route::controller(CartController::class)->group(function () {
 
 /** offer route resource */
 Route::resource('/offer', CartController::class)->except('show');
+
+/** Cart Item route */
+Route::resource('/CartItem', CartItemController::class)->except(['index','edit','create','show']);

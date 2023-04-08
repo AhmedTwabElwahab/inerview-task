@@ -8,6 +8,8 @@ const CURRENCY                                          = "USD";
 const CURRENCY_SYMBOL                                   = "$";
 
 const PRODUCTS_IMG_FOLDER                               = 'images' . DS . 'products' . DS ;
+const SUCCESS                                           = true;
+const FAILED                                            = false;
 /******************* END APP Settings ***************/
 
 

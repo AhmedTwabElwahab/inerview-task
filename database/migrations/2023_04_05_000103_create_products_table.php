@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('category_id');
             $table->string('barcode',20);
             $table->string('name');
+            $table->string('desc');
             $table->unsignedBigInteger('quantity_in_Stock');
             $table->unsignedDecimal('weight');
             $table->unsignedDecimal('vat');

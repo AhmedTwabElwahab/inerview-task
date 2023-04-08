@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  *
  * @property integer $id
  * @property string  $name
+ * @property string  $desc
  * @property integer $barcode
  * @property integer $quantity_in_Stock
  * @property integer $weight
