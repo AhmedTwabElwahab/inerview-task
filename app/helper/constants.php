@@ -10,6 +10,7 @@ const CURRENCY_SYMBOL                                   = "$";
 const PRODUCTS_IMG_FOLDER                               = 'images' . DS . 'products' . DS ;
 const SUCCESS                                           = true;
 const FAILED                                            = false;
+const VAT                                               = 14;
 /******************* END APP Settings ***************/
 
 

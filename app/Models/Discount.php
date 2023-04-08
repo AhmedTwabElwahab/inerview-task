@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property Product        $product
  * @property Offer          $offer
  * @property discountType   $type
+ * @method static where(string $string, $null)
  */
 class Discount extends Model
 {

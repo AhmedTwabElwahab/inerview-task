@@ -69,4 +69,13 @@ class User extends Authenticatable
         return Auth::user();
     }
 
+    /**
+     * Get country.
+     *
+     * @return HasOne
+     */
+    public function country(): HasOne
+    {
+        return $this->hasOne(Country::class,'id','country_id');
+    }
 }

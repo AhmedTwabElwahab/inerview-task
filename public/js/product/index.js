@@ -10,7 +10,7 @@ $(document).ready(function()
      * @constructor
      */
 
-    AddToCart = function  (product_id)
+    AddToCart = function  (product_id, product_price)
     {
         axios({
             method: 'post',
@@ -18,7 +18,8 @@ $(document).ready(function()
             data: {
                 cart_id: null,
                 product_id: Number(product_id),
-                quantity: 1
+                quantity: 1,
+                total: Number(product_price)
             }
         }).then((response) =>
         {

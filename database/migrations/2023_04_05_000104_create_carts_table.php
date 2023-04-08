@@ -15,7 +15,7 @@ return new class extends Migration
         {
             $table->id();
             $table->foreignId('user_id');
-            $table->unsignedDecimal('total');
+            $table->unsignedDecimal('total')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

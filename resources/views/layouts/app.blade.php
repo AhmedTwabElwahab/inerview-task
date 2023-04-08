@@ -22,7 +22,7 @@
 
         <!-- Start style include  -->
         @isset($CSS)
-            @if(file_exists(public_path().DS.$CSS))
+         @if(file_exists(public_path().DS.$CSS))
                 <link rel="stylesheet" href="{{asset($CSS)}}"/>
             @endif
         @endisset

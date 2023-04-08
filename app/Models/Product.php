@@ -28,7 +28,9 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * RELATIONS PROPERTIES
  *
  * @property Category    $category
+ * @property Discount    $discount
  *
+ * @method static find(mixed $product_id)
  */
 class Product extends Model
 {
@@ -45,5 +47,10 @@ class Product extends Model
     public function category(): HasOne
     {
         return $this->hasOne(Category::class,'id','category_id');
+    }
+
+    public function discount():HasOne
+    {
+        return $this->hasOne(Discount::class,'product_id','id');
     }
 }
