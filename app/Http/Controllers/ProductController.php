@@ -17,15 +17,10 @@ use Illuminate\Http\RedirectResponse;
 
 class ProductController extends Controller
 {
-    public function __construct()
-    {
-        $this->init();
-        $this->middlewareInit();
-    }
-
     public function index()
     {
-        $products = Product::with(['unit','category'])->paginate(APP_PAGINATE);
+        $this->init();
+        $products = Product::with(['category'])->paginate(APP_PAGINATE);
         return $this->view(compact('products'));
     }
 

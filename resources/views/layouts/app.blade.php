@@ -44,7 +44,7 @@
     <script src="{{asset('js/lib/fontAwesome/all.min.js')}}"></script>
     @isset($js)
         @if(file_exists(public_path().DS.$js))
-            <script  src="{{asset($js)}}"></script>
+            <script src="{{asset($js)}}"></script>
         @endif
     @endisset
     <!-- End script include  -->
