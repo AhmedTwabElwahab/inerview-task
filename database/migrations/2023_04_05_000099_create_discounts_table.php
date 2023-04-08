@@ -20,6 +20,7 @@ return new class extends Migration
              */
             $table->foreignId('product_id')->nullable();
             $table->unsignedDecimal('discount_value');
+            $table->unsignedInteger('min_order_value');
             $table->foreignId('discount_type_id');
             $table->timestamps();
 
