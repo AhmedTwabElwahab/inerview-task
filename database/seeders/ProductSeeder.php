@@ -16,7 +16,9 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
-                'name'                  => 'Shoes Nike',
+
+                'id'                    => SHOES,
+                'name'                  => 'Shoes',
                 'desc'                  => 'Shoes Nike',
                 'category_id'           => 6,
                 'barcode'               => 15,
@@ -27,7 +29,8 @@ class ProductSeeder extends Seeder
                 'image'                 => PRODUCTS_IMG_FOLDER.'4.jpg',
             ],
             [
-                'name'                  => 'red T-shirt',
+                'id'                    => T_SHIRT,
+                'name'                  => 'T-shirt',
                 'desc'                  => 'red T-shirt',
                 'category_id'           => 1,
                 'barcode'               => 16,
@@ -38,6 +41,7 @@ class ProductSeeder extends Seeder
                 'image'                 => PRODUCTS_IMG_FOLDER.'3.jpg',
             ],
             [
+                'id'                    => BLOUSE,
                 'name'                  => 'Blouse',
                 'desc'                  => 'Blouse',
                 'category_id'           => 2,
@@ -49,6 +53,7 @@ class ProductSeeder extends Seeder
                 'image'                 => PRODUCTS_IMG_FOLDER.'5.jpg',
             ],
             [
+                'id'                    => JACKET,
                 'name'                  => 'Jacket',
                 'desc'                  => 'Jacket',
                 'category_id'           => 5,
@@ -60,8 +65,9 @@ class ProductSeeder extends Seeder
                 'image'                 => PRODUCTS_IMG_FOLDER.'4.jpg',
             ],
             [
-                'name'                  => 'Jacket bee',
-                'desc'                  => 'Jacket bee',
+                'id'                    => PANTS,
+                'name'                  => 'Pants',
+                'desc'                  => 'Pants bee',
                 'category_id'           => 5,
                 'barcode'               => 678,
                 'quantity_in_Stock'     => 46,

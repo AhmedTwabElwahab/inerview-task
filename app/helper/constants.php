@@ -17,3 +17,13 @@ const FAILED                                            = false;
 const CASH                                               = 1;
 const PERCENT                                            = 2;
 /******************* END Discount type *************/
+
+
+/******************* Start Product *************/
+const SHOES                                               = 1;
+const T_SHIRT                                             = 2;
+const BLOUSE                                              = 3;
+const JACKET                                              = 4;
+const PANTS                                               = 5;
+
+/******************* END Product *************/
