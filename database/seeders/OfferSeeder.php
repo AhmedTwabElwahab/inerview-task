@@ -19,28 +19,28 @@ class OfferSeeder extends Seeder
                 'name'                     => 'Shoes 10%',
                 'desc'                     => 'buy shoes Get 10% discount',
                 'shopping_rate_offer'      => false,
-                'end_date'                 => date('Y-m-d',13/10/2024),
+                'end_date'                 => date('Y-m-d',2024/8/12),
             ],
             [
                 'id'                       => 2,
                 'name'                     => 't-shirt',
                 'desc'                     => 'Buy any two tops (t-shirt) and get any jacket half its price',
                 'shopping_rate_offer'      => false,
-                'end_date'  => date('Y-m-d',13/10/2024),
+                'end_date'  => date('Y-m-d',2024/8/12),
             ],
             [
                 'id'        => 3,
                 'name'      => 'blouse',
                 'desc'      => 'Buy any two tops (blouse) and get any jacket half its price',
                 'shopping_rate_offer'      => false,
-                'end_date'  => date('Y-m-d',13/10/2024),
+                'end_date'  => date('Y-m-d',2024/8/12),
             ],
             [
                 'id'                       => 4,
                 'name'                     => 'shipping',
                 'desc'                     => 'Buy any two items or more and get a maximum of $10 off shipping fees.',
                 'shopping_rate_offer'      => true,
-                'end_date'                 => date('Y-m-d',13/10/2024),
+                'end_date'                 => date('Y-m-d',2024/8/12),
             ],
         ]);
         DB::table('discounts')->insert([

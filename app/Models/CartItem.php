@@ -13,7 +13,10 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @package App\Models
  *
  * @property int $id
+ * @property int $cart_id
+ * @property int $product_id
  * @property int $quantity
+ * @property int $total
  *
  * RELATIONS PROPERTIES
  * @property Product $product
@@ -39,13 +42,20 @@ class CartItem extends Model
     {
         $product_id = $request->input('product_id');
         $quantity   = $request->input('quantity');
-        $cart_id    = $request->input('cart_id') == null ? Cart::currentCart()->id : $request->input('cart_id');
+        $total      = $request->input('total');
+        $cart_id    = $request->input('cart_id') === null ? Cart::currentCart()->id : $request->input('cart_id');
+
         // check if item exists
         $item_exists = (new CartItem)->itemExists($cart_id, $product_id);
 
-        if ($item_exists === FAILED)
+        if ($item_exists === false)
         {   // create a new one.
-            $item = new CartItem($request->all());
+            $item = new CartItem();
+
+            $item->cart_id    = $cart_id;
+            $item->product_id = $product_id;
+            $item->quantity   = $quantity;
+            $item->total      = $total;
 
             if (!$item->save())
             {
@@ -53,10 +63,12 @@ class CartItem extends Model
             }
             return SUCCESS;
         }
+
         // update quantity.
         return $item_exists->update(
             [
                 'quantity' => $item_exists->quantity + $quantity,
+                'total'    => $item_exists->product->price * ( $item_exists->quantity + $quantity ),
             ]
         );
     }

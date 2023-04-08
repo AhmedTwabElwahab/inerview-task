@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+
     /**
      * Display user cart.
      *
@@ -19,5 +20,14 @@ class CartController extends Controller
         $this->init();
         $Cart = Cart::currentCart();
         return $this->view(compact('Cart'));
+    }
+
+    public function invoice(): View
+    {
+        $this->init();
+        $Cart = Cart::currentCart();
+        $discounts =  $Cart->getDiscount();
+
+        return $this->view(compact('Cart','discounts'));
     }
 }

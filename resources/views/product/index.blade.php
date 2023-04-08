@@ -20,7 +20,7 @@
                             <p class="card-text">Some quick example text to build on the{{$product->desc}}</p>
                             <a id="addToCart"
                                class="btn btn-primary"
-                               onclick="AddToCart({{$product->id}})"
+                               onclick="AddToCart({{$product->id}},{{$product->price}})"
                             >{{$lang->text('add_cart')}}</a>
                         </div>
                     </div>

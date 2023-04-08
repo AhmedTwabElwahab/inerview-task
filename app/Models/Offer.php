@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int       $id
  * @property string    $name
  * @property string    $desc
+ * @property string    $end_date
  * @property boolean   $shopping_rate_offer
  *
  * RELATIONS PROPERTIES

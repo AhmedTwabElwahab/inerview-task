@@ -14,18 +14,19 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 /** category route resource */
-Route::resource('/category', CategoryController::class)->except('show');
+Route::resource('/category', CategoryController::class)->except('show')->middleware('auth');
 
 /** product route resource */
-Route::resource('/product', ProductController::class)->except('show');
+Route::resource('/product', ProductController::class)->except('show')->middleware('auth');
 
 /** Cart route resource */
-Route::controller(CartController::class)->group(function () {
+Route::controller(CartController::class)->middleware('auth')->group(function () {
     Route::get('/cart', 'show');
+    Route::get('/cart/invoice', 'invoice');
 });
 
 /** offer route resource */
-Route::resource('/offer', CartController::class)->except('show');
+//Route::resource('/offer', CartController::class)->except('show');
 
 /** Cart Item route */
-Route::resource('/CartItem', CartItemController::class)->except(['index','edit','create','show']);
+Route::resource('/CartItem', CartItemController::class)->except(['index','edit','create','show'])->middleware('auth');

@@ -21,8 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('desc');
             $table->unsignedBigInteger('quantity_in_Stock');
-            $table->unsignedDecimal('weight');
-            $table->unsignedDecimal('vat');
+            $table->unsignedDecimal('weight'); //by KG
             $table->unsignedDecimal('price');
             $table->string('image');
             $table->timestamps();
