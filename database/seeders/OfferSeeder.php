@@ -84,7 +84,7 @@ class OfferSeeder extends Seeder
                 'product_id'        => NUll, //if product_id NULL this is mean discount for all products
                 'min_order_value'   => 2,
                 'discount_value'    => 10,
-                'discount_type_id'  => PERCENT,
+                'discount_type_id'  => CASH,
             ],
         ]);
 

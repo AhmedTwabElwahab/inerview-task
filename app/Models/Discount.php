@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property int            $id
  * @property int            $discount_value
  * @property int            $min_order_value
+ * @property int            $product_id
  *
  * RELATIONS PROPERTIES
  * @property Product        $product

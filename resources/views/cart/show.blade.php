@@ -33,10 +33,10 @@
                         </td>
                         <td>{{CURRENCY_SYMBOL.$item->product->price}}</td>
                         <td>
-                            <form method="POST" action="{{route('CartItem.destroy',$item)}}">
+                            <form action="{{route('CartItem.destroy',$item)}}" method="POST">
                                 @csrf
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button id="remove_row" type="submit" class="btn">
+                                <button type="submit" class="btn">
                                     <i class="fa fa-trash" style="color:red"></i>
                                 </button>
                             </form>
@@ -48,9 +48,9 @@
         </table>
         {{--TODO::subtotal shoppping cart--}}
         <div class="container">
-            <button type="button" class="btn btn-warning">
+            <a href="{{route('showInvoice')}}" class="btn btn-warning">
                 Proceed to checkout
-            </button>
+            </a>
         </div>
     </div>
 

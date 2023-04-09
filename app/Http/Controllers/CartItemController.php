@@ -45,16 +45,16 @@ class CartItemController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     * @param CartItem $cartItem
+     * @param CartItem $CartItem
      * @return RedirectResponse
      */
-    public function destroy(CartItem $cartItem): RedirectResponse
+    public function destroy(CartItem $CartItem): RedirectResponse
     {
         $this->init();
         DB::beginTransaction();
         try
         {
-            if ($cartItem->delete() == FAILED)
+            if ($CartItem->delete() == FAILED)
             {
                 throw new Exception('error' ,APP_ERROR);
             }

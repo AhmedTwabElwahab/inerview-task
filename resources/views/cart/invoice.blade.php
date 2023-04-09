@@ -12,9 +12,9 @@
         <div class="invoice-wrap">
             <div class="invoice_header">
                 <div class="left">
-                    <h4>QuMarket</h4>
-                    <div>ش علي بن اب طالب</div>
-                    <div>قنا, قنا</div>
+                    <h4>QMarket</h4>
+                    <div>ali ahmed</div>
+                    <div>Egypt,cairo</div>
                 </div>
             </div>
             <div class="invoice_info">
@@ -71,8 +71,10 @@
                     </div>
                     @foreach($discounts as $discount)
                         <div>
-                            <div class="left fw-bold">{{$discount['name']}}</div>
-                            <div class="right">{{ '- ' . CURRENCY_SYMBOL.$discount['value']}}</div>
+                            @isset($discount['obj'])
+                                <div class="left fw-bold">{{$discount['obj']->desc}}</div>
+                                <div class="right">{{ '- ' . CURRENCY_SYMBOL.$discount['value']}}</div>
+                            @endisset
                         </div>
                     @endforeach
                     <div>
