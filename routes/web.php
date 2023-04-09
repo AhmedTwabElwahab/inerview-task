@@ -21,8 +21,8 @@ Route::resource('/product', ProductController::class)->except('show')->middlewar
 
 /** Cart route resource */
 Route::controller(CartController::class)->middleware('auth')->group(function () {
-    Route::get('/cart', 'show');
-    Route::get('/cart/invoice', 'invoice');
+    Route::get('/cart', 'show')->name('showCart');
+    Route::get('/cart/invoice', 'invoice')->name('showInvoice');
 });
 
 /** offer route resource */

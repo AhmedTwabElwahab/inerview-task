@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
-use App\Models\User;
+use App\Models\CartItem;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
+
 
 class CartController extends Controller
 {
@@ -30,4 +30,11 @@ class CartController extends Controller
 
         return $this->view(compact('Cart','discounts'));
     }
+
+    /**
+     * Delete category.
+     *
+     * @param CartItem $Item
+     *
+     */
 }

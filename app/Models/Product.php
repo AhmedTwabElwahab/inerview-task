@@ -2,12 +2,8 @@
 
 namespace App\Models;
 
-use App\Http\Requests\ProductRequest;
-use Exception;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 

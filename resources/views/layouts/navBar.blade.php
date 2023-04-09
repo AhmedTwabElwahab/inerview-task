@@ -12,7 +12,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{route('home')}}"> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('product.index')}}"> Product </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('category.index')}}"> Category </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('showCart')}}"> Shopping cart </a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -42,6 +53,7 @@
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
+
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
