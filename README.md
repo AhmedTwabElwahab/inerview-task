@@ -14,12 +14,18 @@ The program is a cart of products, App can be evaluated that cart by country, Of
     - discountType
 
 
-install App:
+install App :
 
-```
+``` 
 npm install
 
 php artisan migrate --seed
 
 npm run dev
 ```
+use info to login :
+
+login url   => '/login'
+email       => ahmed@gmil.com
+pass        => 123456789
+
