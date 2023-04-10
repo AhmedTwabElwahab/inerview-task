@@ -18,8 +18,6 @@ class CartItemRequest extends FormRequest
     protected function onUpdate(): array
     {
         return [
-            'cart_id'           => 'sometimes|nullable|numeric|exists:cart,id',
-            'product_id'        => 'required|numeric|exists:products,id',
             'quantity'          => 'required|numeric|min:1',
         ];
     }

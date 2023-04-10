@@ -62,6 +62,7 @@ class Cart extends Model
 
     /**
      * Get current cart.
+     * if cart not fount func create it.
      *
      * @return Cart
      */

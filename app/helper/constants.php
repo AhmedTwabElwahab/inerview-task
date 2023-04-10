@@ -29,3 +29,17 @@ const JACKET                                              = 4;
 const PANTS                                               = 5;
 
 /******************* END Product *************/
+
+
+/******************* Start test unit *************/
+const PRODUCT_ID                                               = 1;
+const DEFAULT_USER_ID                                          = 1;
+const EMAIL                                                    = 'ahmed@gmil.com';
+const PASSWORD                                                 = '123456789';
+const EGYPT_ID                                                 = 1 ;
+const DEFAULT_PRODUCT_ID                                       = 1 ;
+const DEFAULT_CART_ID                                          = 1 ;
+const DEFAULT_ITEM_ID                                          = 1 ;
+
+
+/******************* END test unit *************/

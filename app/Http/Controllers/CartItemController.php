@@ -50,7 +50,7 @@ class CartItemController extends Controller
         {
             $CartItem->update($request->all());
 
-            if ($CartItem->save())
+            if (!$CartItem->save())
             {
                 throw new Exception('error',APP_ERROR);
             }
@@ -85,7 +85,7 @@ class CartItemController extends Controller
             }
             DB::commit();
             $this->success('success');
-            return redirect()->route('cart.show');
+            return redirect()->route('showCart');
         } catch (Exception $e)
         {
             DB::rollBack();
