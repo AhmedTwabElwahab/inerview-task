@@ -14,7 +14,7 @@ The program is a cart of products, App can be evaluated that cart by country, Of
     - discountType
 
 
-install App :
+### Install App :
 
 ``` 
 npm install
