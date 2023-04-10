@@ -23,9 +23,9 @@ php artisan migrate --seed
 
 npm run dev
 ```
-use info to login :
+### Use info to login :
 
-login url   => '/login'
-email       => ahmed@gmil.com
-pass        => 123456789
+- login url   => '/login'
+- email       => ahmed@gmil.com
+- pass        => 123456789
 
