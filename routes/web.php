@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OfferController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,7 @@ Route::controller(CartController::class)->middleware('auth')->group(function () 
 });
 
 /** offer route resource */
-//Route::resource('/offer', CartController::class)->except('show');
+Route::resource('/offer', OfferController::class)->except(['show','edit','update']);
 
 /** Cart Item route */
 Route::resource('/CartItem', CartItemController::class)->except(['index','edit','create','show'])->middleware('auth');

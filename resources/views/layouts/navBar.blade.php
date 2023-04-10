@@ -11,6 +11,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
+            @auth()
             <ul class="navbar-nav me-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{route('home')}}"> Home <span class="sr-only">(current)</span></a>
@@ -25,6 +26,7 @@
                     <a class="nav-link" href="{{route('showCart')}}"> Shopping cart </a>
                 </li>
             </ul>
+            @endauth
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">

@@ -8,6 +8,7 @@ const CURRENCY                                          = "USD";
 const CURRENCY_SYMBOL                                   = "$";
 
 const PRODUCTS_IMG_FOLDER                               = 'images' . DS . 'products' . DS ;
+const DEFAULT_IMG                                       = PRODUCTS_IMG_FOLDER.'5.jpg' ;
 const SUCCESS                                           = true;
 const FAILED                                            = false;
 const VAT                                               = 14;
