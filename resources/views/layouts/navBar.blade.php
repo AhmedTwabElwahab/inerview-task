@@ -23,6 +23,9 @@
                     <a class="nav-link" href="{{route('category.index')}}"> Category </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('offer.index')}}"> Offer </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{route('showCart')}}"> Shopping cart </a>
                 </li>
             </ul>
