@@ -5,7 +5,9 @@
         <div class="row d-print-none">
             <div class="col-md-6">
                 <div class="col-12 col-lg-4 py-3 px-3">
-                    {{$lang->text('Invoice')}}
+                    <h2>
+                        Invoice
+                    </h2>
                 </div>
             </div>
         </div>

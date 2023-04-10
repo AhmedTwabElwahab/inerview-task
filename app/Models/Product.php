@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property Discount    $discount
  *
  * @method static find(mixed $product_id)
+ * @method static paginate(int $APP_PAGINATE)
  */
 class Product extends Model
 {

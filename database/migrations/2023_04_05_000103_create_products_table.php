@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('quantity_in_Stock');
             $table->unsignedDecimal('weight'); //by KG
             $table->unsignedDecimal('price');
-            $table->string('image');
+            $table->string('image')->default(DEFAULT_IMG);
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');

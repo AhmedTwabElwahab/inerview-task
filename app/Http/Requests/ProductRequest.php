@@ -18,33 +18,27 @@ class ProductRequest extends FormRequest
     protected function onUpdate(): array
     {
         return [
-            'barcode'           => 'array|min:1',
-            'barcode.*'         => 'required|string|unique:barcodes,barcode',
-            'name'              => 'required|string|max:255',
-            'order_limit'       => 'sometimes|nullable|numeric',
-            'purchase_price'    => 'required|numeric',
-            'sale_price'        => 'required|numeric',
-            'wholesale_price'   => 'sometimes|nullable|numeric',
-            'half_price'        => 'sometimes|nullable|numeric',
-            'unit_id'           => 'required|numeric|exists:units,id',
             'category_id'       => 'required|numeric|exists:categories,id',
-            'expiry_date'       => 'sometimes|nullable|date',
+            'barcode'           => 'required|string',
+            'name'              => 'required|string|max:255',
+            'desc'              => 'required|string|max:255',
+            'quantity_in_Stock' => 'required|numeric|min:0',
+            'weight'            => 'required|numeric|min:0.01',
+            'price'             => 'required|numeric|min:0',
+            'image'             => 'sometimes|nullable|string',
         ];
     }
     protected function onCreate(): array
     {
         return [
-            'barcode'           => 'array|min:1',
-            'barcode.*'         => 'required|string|unique:barcodes,barcode',
-            'name'              => 'required|string|max:255',
-            'order_limit'       => 'sometimes|nullable|numeric',
-            'purchase_price'    => 'required|numeric',
-            'sale_price'        => 'required|numeric',
-            'wholesale_price'   => 'sometimes|nullable|numeric',
-            'half_price'        => 'sometimes|nullable|numeric',
-            'unit_id'           => 'required|numeric|exists:units,id',
             'category_id'       => 'required|numeric|exists:categories,id',
-            'expiry_date'       => 'sometimes|nullable|date',
+            'barcode'           => 'required|string',
+            'name'              => 'required|string|max:255',
+            'desc'              => 'required|string|max:255',
+            'quantity_in_Stock' => 'required|numeric|min:0',
+            'weight'            => 'required|numeric|min:0.01',
+            'price'             => 'required|numeric|min:0',
+            'image'             => 'sometimes|nullable|string',
         ];
     }
     public function rules(): array

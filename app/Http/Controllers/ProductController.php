@@ -3,55 +3,57 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
-use App\Models\Barcode;
 use App\Models\Category;
 use App\Models\Product;
-use App\Models\Stock;
-use App\Models\Unit;
-use Carbon\Carbon;
-use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Exception;
 
 class ProductController extends Controller
 {
-    public function index()
+    /**
+     * Display a listing of Product.
+     *
+     * @return View
+     */
+    public function index(): View
     {
         $this->init();
         $products = Product::with(['category'])->paginate(APP_PAGINATE);
         return $this->view(compact('products'));
     }
-
+    /**
+     * Create New Product.
+     *
+     * @return View
+     */
     public function create():View
     {
-        $units       = Unit::get();
+        $this->init();
         $categories  = Category::all();
-        return $this->view(compact('units','categories'));
+        return $this->view(compact('categories'));
     }
 
+    /**
+     * store a new Product.
+     *
+     * @param ProductRequest $request
+     * @return RedirectResponse
+     */
     public function store(ProductRequest $request): RedirectResponse
     {
         $this->init();
         DB::beginTransaction();
         try
         {
-            $product = Product::createProduct($request);
-
-            Barcode::createBarcode($product->id, $request->input('barcode'));
-
-            $Stock   = new Stock();
-            $Stock->product_id     = $product->id;
-            $Stock->warehouse_id   = MASTER_WAREHOUSE;
-
-            if ($Stock->save() == false)
+            $product = new Product($request->all());
+            if (!$product->save())
             {
-                throw new Exception('error_create_product',APP_ERROR);
+                throw new Exception('error',APP_ERROR);
             }
-
             DB::commit();
-            $this->success('success_add');
+            $this->success('success');
             return redirect()->route('product.index');
 
         }catch (Exception $e)
@@ -63,18 +65,25 @@ class ProductController extends Controller
         }
     }
 
-    public function edit(Product $product)
+    /**
+     * edit exists product.
+     *
+     * @param Product $product
+     * @return View
+     */
+    public function edit(Product $product): View
     {
-        $units       = Unit::get();
         $categories  = Category::all();
-        return $this->view(compact('product','categories','units'));
+        return $this->view(compact('product','categories'));
     }
 
-    public function show(Product $product)
-    {
-        return $this->view(compact('product'));
-    }
-
+    /**
+     * update product info.
+     *
+     * @param ProductRequest $request
+     * @param Product $product
+     * @return RedirectResponse
+     */
     public function update(ProductRequest $request, Product $product): RedirectResponse
     {
         $this->init();
@@ -83,15 +92,13 @@ class ProductController extends Controller
         {
            $res = $product->update($request->except('barcode'));
 
-            if ($res == false)
+            if (!$res)
             {
-                throw new Exception('error_update',APP_ERROR);
+                throw new Exception('error',APP_ERROR);
             }
 
-            Barcode::updateBarcode($product,$request->input('barcode'));
-
             DB::commit();
-            $this->success('success_update');
+            $this->success('success');
             return redirect()->route('product.index');
         }catch (Exception $e)
         {
@@ -100,11 +107,5 @@ class ProductController extends Controller
             $this->setSystemMessage($message);
             return redirect()->back();
         }
-    }
-
-
-    public function getProduct(Request $request)
-    {
-        return Product::getProduct($request);
     }
 }

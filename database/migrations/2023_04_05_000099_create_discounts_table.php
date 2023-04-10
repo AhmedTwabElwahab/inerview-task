@@ -25,7 +25,9 @@ return new class extends Migration
             $table->timestamps();
 
 
+            $table->foreign('offer_id')->references('id')->on('offers');
             $table->foreign('discount_type_id')->references('id')->on('discount_types');
+
         });
     }
 

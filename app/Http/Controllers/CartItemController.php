@@ -37,14 +37,39 @@ class CartItemController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param CartItemRequest $request
+     * @param CartItem $CartItem
+     * @return RedirectResponse
      */
-    public function update(CartItemRequest $request, CartItem $cartItem)
+    public function update(CartItemRequest $request, CartItem $CartItem): RedirectResponse
     {
-        //TODO::update method
+        $this->init();
+        DB::beginTransaction();
+        try
+        {
+            $CartItem->update($request->all());
+
+            if ($CartItem->save())
+            {
+                throw new Exception('error',APP_ERROR);
+            }
+
+            DB::commit();
+            $this->success('success');
+            return redirect()->route('showCart');
+        }catch (Exception $e)
+        {
+            DB::rollBack();
+            $message = $this->handleException($e);
+            $this->setSystemMessage($message);
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
      * Remove the specified resource from storage.
+     *
      * @param CartItem $CartItem
      * @return RedirectResponse
      */
