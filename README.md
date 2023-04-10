@@ -19,7 +19,7 @@ install App:
 ```
 npm install
 
-@php artisan migrate --seed
+php artisan migrate --seed
 
 npm run dev
 ```
