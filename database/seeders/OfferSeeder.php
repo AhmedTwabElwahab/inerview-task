@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -20,20 +21,24 @@ class OfferSeeder extends Seeder
                 'desc'                     => 'buy shoes Get 10% discount',
                 'shopping_rate_offer'      => false,
                 'end_date'                 => date('Y-m-d',2024/8/12),
+                'created_at'               => Carbon::now()->format('Y-m-d H:i:s')
+
             ],
             [
                 'id'                       => 2,
                 'name'                     => 't-shirt',
                 'desc'                     => 'Buy any two tops (t-shirt) and get any jacket half its price',
                 'shopping_rate_offer'      => false,
-                'end_date'  => date('Y-m-d',2024/8/12),
+                'end_date'                 => date('Y-m-d',2024/8/12),
+                'created_at'               => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'id'        => 3,
-                'name'      => 'blouse',
-                'desc'      => 'Buy any two tops (blouse) and get any jacket half its price',
+                'id'                       => 3,
+                'name'                     => 'blouse',
+                'desc'                     => 'Buy any two tops (blouse) and get any jacket half its price',
                 'shopping_rate_offer'      => false,
-                'end_date'  => date('Y-m-d',2024/8/12),
+                'end_date'                 => date('Y-m-d',2024/8/12),
+                'created_at'               => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'id'                       => 4,
@@ -41,6 +46,7 @@ class OfferSeeder extends Seeder
                 'desc'                     => 'Buy any two items or more and get a maximum of $10 off shipping fees.',
                 'shopping_rate_offer'      => true,
                 'end_date'                 => date('Y-m-d',2024/8/12),
+                'created_at'               => Carbon::now()->format('Y-m-d H:i:s')
             ],
         ]);
         DB::table('discounts')->insert([

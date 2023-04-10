@@ -27,7 +27,7 @@ Route::controller(CartController::class)->middleware('auth')->group(function () 
 });
 
 /** offer route resource */
-Route::resource('/offer', OfferController::class)->except(['show','edit','update']);
+Route::resource('/offer', OfferController::class)->except(['show','edit','update'])->middleware('auth');
 
 /** Cart Item route */
 Route::resource('/CartItem', CartItemController::class)->except(['index','edit','create','show'])->middleware('auth');

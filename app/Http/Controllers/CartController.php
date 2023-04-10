@@ -30,11 +30,4 @@ class CartController extends Controller
 
         return $this->view(compact('Cart','discounts'));
     }
-
-    /**
-     * Delete category.
-     *
-     * @param CartItem $Item
-     *
-     */
 }

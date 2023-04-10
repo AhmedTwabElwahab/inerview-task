@@ -10,5 +10,9 @@ function getLangError()
 
 function DateFormat(string $date): string
 {
+    if ($date == null)
+    {
+      return '';
+    }
     return date('Y/m/d | h:i A', strtotime($date)); //| h:s A
 }
