@@ -17,6 +17,10 @@ The program is a cart of products, App can be evaluated that cart by country, Of
 ### Install App :
 
 ``` 
+git clone https://github.com/AhmedTwabElwahab/inerview-task.git
+
+composer install
+
 npm install
 
 php artisan migrate --seed
