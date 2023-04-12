@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 /** Dashboard route */
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 /** category route resource */
 Route::resource('/category', CategoryController::class)->except('show')->middleware('auth');
