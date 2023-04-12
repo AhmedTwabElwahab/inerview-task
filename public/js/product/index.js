@@ -14,7 +14,7 @@ $(document).ready(function()
     {
         axios({
             method: 'post',
-            url: '/interview-task/inerview-task/public/CartItem',
+            url: '/CartItem',
             data: {
                 cart_id: null,
                 product_id: Number(product_id),

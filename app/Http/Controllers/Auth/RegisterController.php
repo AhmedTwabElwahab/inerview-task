@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
@@ -73,15 +74,24 @@ class RegisterController extends Controller
             'country_id' => $data['country_id'],
         ]);
     }
-    
+
      /**
      * Show the application registration form.
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
-    public function showRegistrationForm()
+    public function showRegistrationForm(): View
     {
         $Countries =  Country::all();
         return view('auth.register',compact('Countries'));
+    }
+
+    public function redirectPath()
+    {
+        if (method_exists($this, 'redirectTo')) {
+            return $this->redirectTo();
+        }
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
     }
 }

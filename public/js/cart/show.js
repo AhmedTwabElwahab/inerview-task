@@ -1,6 +1,6 @@
 removeItem = function (item_ID)
 {
-    axios.delete(`/interview-task/inerview-task/public/CartItem/${item_ID}`,)
+    axios.delete(`/CartItem/${item_ID}`,)
         .then((response) =>
         {
             console.log(response);

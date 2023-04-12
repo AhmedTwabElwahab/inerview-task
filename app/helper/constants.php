@@ -34,7 +34,7 @@ const PANTS                                               = 5;
 /******************* Start test unit *************/
 const PRODUCT_ID                                               = 1;
 const DEFAULT_USER_ID                                          = 1;
-const EMAIL                                                    = 'ahmed@gmil.com';
+const EMAIL                                                    = 'ahmed@gmail.com';
 const PASSWORD                                                 = '123456789';
 const EGYPT_ID                                                 = 1 ;
 const DEFAULT_PRODUCT_ID                                       = 1 ;

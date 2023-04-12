@@ -6,7 +6,7 @@ The program is a cart of products, App can be evaluated that cart by country, Of
 ### Available Models
 - User
 - Category
-- Product
+  - Product
 - Cart
   - CartItems
 - Offer
@@ -25,11 +25,11 @@ npm install
 
 php artisan migrate --seed
 
-npm run dev
+php artisan serve
 ```
 ### Use info to login :
 
 - login url   => '/login'
-- email       => ahmed@gmil.com
+- email       => ahmed@gmail.com
 - pass        => 123456789
 
