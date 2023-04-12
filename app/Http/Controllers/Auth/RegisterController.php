@@ -72,4 +72,15 @@ class RegisterController extends Controller
             'country_id' => $data['country_id'],
         ]);
     }
+    
+     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        $Countries =  Country::all();
+        return view('auth.register',compact('Countries'));
+    }
 }
