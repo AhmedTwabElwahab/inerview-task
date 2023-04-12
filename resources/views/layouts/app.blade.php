@@ -13,8 +13,8 @@
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-        <!-- Scripts -->
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{{asset('css/lib/bootstrap/bootstrap.min.css')}}">
 
         <!-- fontAwesome -->
         <link rel="stylesheet" href="{{asset('css/lib/fontAwesome/all.min.css')}}">
@@ -41,6 +41,8 @@
 
     <!-- start script include  -->
     <script src="{{asset('js/lib/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('js/lib/axios/axios.min.js')}}"></script>
+    <script src="{{asset('js/lib/bootstrap/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/lib/fontAwesome/all.min.js')}}"></script>
     @isset($js)
         @if(file_exists(public_path().DS.$js))
