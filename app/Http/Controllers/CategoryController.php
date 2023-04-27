@@ -54,7 +54,7 @@ class CategoryController extends Controller
             }
 
             DB::commit();
-            $this->success('success_add');
+            $this->success('success_add_category');
             return redirect()->route('category.index');
 
         }catch (Exception $e)
@@ -98,7 +98,7 @@ class CategoryController extends Controller
             }
 
             DB::commit();
-            $this->success('success_update');
+            $this->success('success_update_category');
             return redirect()->route('category.index');
         }catch (Exception $e)
         {

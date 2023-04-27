@@ -25,7 +25,7 @@ class OfferRequest extends FormRequest
         return [
             'name'                    => 'required|string|max:255',
             'desc'                    => 'required|string|max:255',
-            'end_date'                => 'required|date',
+            'end_date'                => 'required|date|after:'.now(),
             'shopping_rate_offer'     => 'sometimes|nullable|bool',
         ];
     }

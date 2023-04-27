@@ -2,7 +2,6 @@ let AddToCart;
 
 $(document).ready(function()
 {
-
     /**
      * this method to add Cart Item
      *
@@ -23,10 +22,20 @@ $(document).ready(function()
             }
         }).then((response) =>
         {
-            console.log(response);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Added to cart successfully!',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }, (error) =>
         {
-            console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            });
         });
     };
 

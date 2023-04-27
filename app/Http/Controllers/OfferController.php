@@ -63,7 +63,7 @@ class OfferController extends Controller
             DB::rollBack();
             $message = $this->handleException($e);
             $this->setSystemMessage($message);
-            return redirect()->back();
+            return redirect()->back()->withInput();
         }
     }
 

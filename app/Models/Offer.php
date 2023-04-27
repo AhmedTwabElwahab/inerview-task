@@ -47,6 +47,14 @@ class Offer extends Model
      */
     public static function createOffer(OfferRequest $request): Offer
     {
+        if (empty($request->input('product_id')))
+        {
+            throw new Exception('add_discount',APP_ERROR);
+        }
+        if ($request->input('end_date') < now())
+        {
+            throw new Exception('end_date_failed',APP_ERROR);
+        }
         $offer = new Offer();
         $offer->name       = $request->input('name');
         $offer->desc       = $request->input('desc');
