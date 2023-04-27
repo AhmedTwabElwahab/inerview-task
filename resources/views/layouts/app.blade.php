@@ -19,6 +19,8 @@
         <!-- fontAwesome -->
         <link rel="stylesheet" href="{{asset('css/lib/fontAwesome/all.min.css')}}">
 
+        <!-- sweetalert -->
+        <link rel="stylesheet" href="{{asset('css/lib/sweetAlert/sweetalert2.min.css')}}">
 
         <!-- Start style include  -->
         @isset($CSS)
@@ -28,27 +30,46 @@
         @endisset
         <!-- End style include  -->
     </head>
-<body>
-    <div id="app">
-        @include('layouts.navBar')
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    <body>
+        <div id="app">
+            @include('layouts.navBar')
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
 
+        <!-- start script include  -->
+        <script src="{{asset('js/lib/jquery/jquery.min.js')}}"></script>
+        <script src="{{asset('js/lib/axios/axios.min.js')}}"></script>
+        <script src="{{asset('js/lib/bootstrap/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('js/lib/fontAwesome/all.min.js')}}"></script>
+        <script src="{{asset('js/lib/sweetAlert/sweetalert2.all.min.js')}}"></script>
+        @isset($js)
+            @if(file_exists(public_path().DS.$js))
+                <script src="{{asset($js)}}"></script>
+            @endif
+        @endisset
+        <!-- End script include  -->
+    </body>
+    @if(Session::has('success'))
+        <script>
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: '{{Session::get('success')}}',
+                showConfirmButton: false,
+                timer: 1000
+            })
+        </script>
+    @endif
+    @if(Session::has('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: '{{Session::get('error')}}',
+                text: 'Something went wrong!',
+            })
+        </script>
+    @endif
 
-
-
-    <!-- start script include  -->
-    <script src="{{asset('js/lib/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('js/lib/axios/axios.min.js')}}"></script>
-    <script src="{{asset('js/lib/bootstrap/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('js/lib/fontAwesome/all.min.js')}}"></script>
-    @isset($js)
-        @if(file_exists(public_path().DS.$js))
-            <script src="{{asset($js)}}"></script>
-        @endif
-    @endisset
-    <!-- End script include  -->
-</body>
 </html>
