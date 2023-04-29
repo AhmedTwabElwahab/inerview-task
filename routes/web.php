@@ -31,3 +31,4 @@ Route::resource('/offer', OfferController::class)->except(['show','edit','update
 
 /** Cart Item route */
 Route::resource('/CartItem', CartItemController::class)->except(['index','edit','create','show'])->middleware('auth');
+Route::post('/CartItem/update' , [CartItemController::class,'updateItem']);

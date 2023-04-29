@@ -17,7 +17,7 @@ class CartSeeder extends Seeder
             [
                 'id'            => 1,
                 'user_id'       => DEFAULT_USER_ID,
-                'total'         => 152,
+                'total'         => 30,
             ],
         ]);
 
@@ -26,7 +26,7 @@ class CartSeeder extends Seeder
                 'cart_id'          => 1,
                 'product_id'       => DEFAULT_PRODUCT_ID,
                 'quantity'         => 10,
-                'total'            => 152,
+                'total'            => 30,
             ],
         ]);
     }

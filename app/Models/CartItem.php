@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Http\Request;
 
 /**
  * Class CartItem
@@ -23,6 +24,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property Cart $cart
  *
  * @method static where(string $string, mixed $cart_id)
+ * @method static find(mixed $index)
  */
 class CartItem extends Model
 {
@@ -71,6 +73,45 @@ class CartItem extends Model
                 'total'    => $item_exists->product->price * ( $item_exists->quantity + $quantity ),
             ]
         );
+    }
+
+    /**
+     * update cartItem before launch invoice.
+     *
+     * @param Request $request
+     * @return bool
+     */
+    public static function updateCartItem(Request $request): bool
+    {
+        if (!$request->has('item_id') && $request->input('type'))
+        {
+            return FAILED;
+        }
+        $item = $request->input('item_id');
+        $type = $request->input('type');
+
+        $item_ex =  CartItem::find(intval($item));
+
+        if ($item_ex == null)
+        {
+            return FAILED;
+        }
+        if ($type === QTY_INC)
+        {
+            return $item_ex->update(
+            [
+                'quantity' => $item_ex->quantity + 1,
+                'total'    => ($item_ex->quantity + 1) * $item_ex->product->price,
+            ]);
+        }
+        else
+        {
+            return $item_ex->update(
+            [
+                'quantity' => ($item_ex->quantity - 1),
+                'total'    => ($item_ex->quantity - 1) * $item_ex->product->price,
+            ]);
+        }
     }
 
     /**

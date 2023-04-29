@@ -3,6 +3,6 @@
 return array_merge(getLangError(),[
 
     'title'                     => 'products',
-    'products'                  => "products",
+    'products'                  => "Products",
     'add_cart'                  => "add to Cart",
 ]);
