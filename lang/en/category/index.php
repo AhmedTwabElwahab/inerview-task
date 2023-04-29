@@ -3,7 +3,7 @@
 return array_merge(getLangError(),[
     'title'                      => 'category',
     'num'                        => 'Num',
-    'categories'                 => 'categories',
+    'categories'                 => 'Categories',
     'add_category'               => 'Add Category',
     'name'                       => 'name',
     'control'                    => 'control',

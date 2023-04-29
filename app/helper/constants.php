@@ -41,5 +41,7 @@ const DEFAULT_PRODUCT_ID                                       = 1 ;
 const DEFAULT_CART_ID                                          = 1 ;
 const DEFAULT_ITEM_ID                                          = 1 ;
 
-
 /******************* END test unit *************/
+
+const QTY_INC                                          = 'INC' ;
+const QTY_DEC                                          = 'DEC' ;

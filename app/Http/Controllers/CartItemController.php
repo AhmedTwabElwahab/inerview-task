@@ -6,6 +6,7 @@ use App\Http\Requests\CartItemRequest;
 use App\Models\CartItem;
 use Exception;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CartItemController extends Controller
@@ -84,7 +85,6 @@ class CartItemController extends Controller
                 throw new Exception('error' ,APP_ERROR);
             }
             DB::commit();
-            $this->success('success');
             return redirect()->route('showCart');
         } catch (Exception $e)
         {
@@ -93,5 +93,16 @@ class CartItemController extends Controller
             $this->setSystemMessage($message);
             return redirect()->back();
         }
+    }
+
+    /**
+     * update cartItem.
+     *
+     * @param Request $request
+     * @return bool
+     */
+    public function updateItem(Request $request): bool
+    {
+       return CartItem::updateCartItem($request);
     }
 }

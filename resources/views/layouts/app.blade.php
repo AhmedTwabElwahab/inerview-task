@@ -22,6 +22,8 @@
         <!-- sweetalert -->
         <link rel="stylesheet" href="{{asset('css/lib/sweetAlert/sweetalert2.min.css')}}">
 
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
         <!-- Start style include  -->
         @isset($CSS)
          @if(file_exists(public_path().DS.$CSS))
@@ -31,7 +33,7 @@
         <!-- End style include  -->
     </head>
     <body>
-        <div id="app">
+        <div id="app" class="container-fluid m-0 p-0">
             @include('layouts.navBar')
             <main class="py-4">
                 @yield('content')
